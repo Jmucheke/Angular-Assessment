@@ -19,13 +19,11 @@ import { UserState } from '../../State/Reducers/user.reducer';
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup
-  loading$: Observable<boolean>;
-  error$: Observable<any>;
-  constructor(private fb: FormBuilder, private authentication: AuthenticationService, private auth: AuthService,
-    private router: Router
-  ) {
 
-  }
+  constructor(private fb: FormBuilder, private authentication: AuthenticationService, private auth: AuthService,private router: Router) {}
+  loading$!: Observable<boolean>;
+  error$!: Observable<any>;
+
   ngOnInit(): void {
     this.form = this.fb.group({
       Email: [null, [Validators.required, Validators.email]],

@@ -14,7 +14,7 @@ export class UserEffects {
       ofType(UserActions.Login),
       switchMap(({ email, password }) =>
         this.authenticationService.login(email, password).pipe(
-          map(user => UserActions.LoginSuccess({ user })),
+          map(user => UserActions.LoginSuccess( user )),
           catchError(error => of(UserActions.LoginFailure({ error })))
         )
       )
@@ -26,7 +26,7 @@ export class UserEffects {
       ofType(UserActions.Register),
       switchMap(({ name, email, password }) =>
         this.authenticationService.register(name, email, password).pipe(
-          map(user => UserActions.RegisterSuccess({ user })),
+          map(user => UserActions.RegisterSuccess( user)),
           catchError(error => of(UserActions.RegisterFailure({ error })))
         )
       )

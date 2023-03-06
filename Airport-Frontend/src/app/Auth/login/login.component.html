@@ -5,14 +5,14 @@
          </div>
         <div class="right">
             <h1>Login Here</h1>
-            
+
           <form [formGroup]="form" (ngSubmit)="submitForm()" >
             <div class="formGroup">
                 <div class="FormControl">
                     <label htmlFor="name">Enter Email:</label>
                     <input type="text" formControlName="Email" />
                 </div>
-    
+
                 <div class="FormControl">
                     <label htmlFor="name">Enter Password:</label>
                     <input type="password" formControlName="Password" />
@@ -25,5 +25,5 @@
         </div>
     </div>
     </div>
-    
-<app-error *ngIf="error" [errorMessage]="error"(close)="Close()" ></app-error>
+
+<!-- <app-error *ngIf="error" [errorMessage]="error"(close)="Close()" ></app-error> -->

@@ -12,14 +12,14 @@ export class AuthenticationService {
   login(email: string, password: string): Observable<{ token: string, user: User }> {
     const body = { email, password };
     return this.http.post<{ token: string, user: User }>('http://localhost:4000/auth/login', body).pipe(
-      tap(res => localStorage.setItem('token', res.token))
+      tap((res) => {localStorage.setItem('token', res.token)})
     );
   }
 
   register(name: string, email: string, password: string): Observable<{ token: string, user: User }> {
     const body = { name, email, password };
     return this.http.post<{ token: string, user: User }>('http://localhost:4000/auth/register', body).pipe(
-      tap(res => localStorage.setItem('token', res.token))
+      tap((res) => {localStorage.setItem('token', res.token)})
     );
   }
 
