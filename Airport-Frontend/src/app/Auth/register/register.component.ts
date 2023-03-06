@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import * as UserActions from '../../State/Actions/user.action';
 import { UserState } from '../../State/Reducers/user.reducer';
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit{
   form!:FormGroup
   loading$!: Observable<boolean>;
   error$!: Observable<any>;
-  constructor(private fb:FormBuilder,private authentication:AuthenticationService, private router:Router){
+  constructor(private fb: FormBuilder, private authentication: AuthenticationService, private router: Router, private store: Store<any>){
 
   }
   ngOnInit(): void {

@@ -20,7 +20,7 @@ import { UserState } from '../../State/Reducers/user.reducer';
 export class LoginComponent implements OnInit {
   form!: FormGroup
 
-  constructor(private fb: FormBuilder, private authentication: AuthenticationService, private auth: AuthService,private router: Router) {}
+  constructor(private fb: FormBuilder, private authentication: AuthenticationService, private auth: AuthService, private router: Router, private store: Store<any>) {}
   loading$!: Observable<boolean>;
   error$!: Observable<any>;
 
